@@ -1,5 +1,5 @@
 /* 导入Poppins字体 */
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=Swap');
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=Swap'); */
 
 * {
     margin: 0;
@@ -7,6 +7,15 @@
     box-sizing: border-box;
     font-size: 100px;
     font-family: 'Poppins', sans-serif;
+}
+
+span,
+input,
+i,
+a,
+div {
+    font-size: 16px;
+    text-decoration: none;
 }
 
 body {
@@ -38,7 +47,7 @@ body {
     width: 3.8rem;
     height: 4.2rem;
     background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
-    /* animation: animate 6s linear infinite; */
+    animation: animate 6s linear infinite;
 }
 
 .box::after {
@@ -71,4 +80,99 @@ body {
     inset: .02rem;
     z-index: 10;
     background-color: #1c1c1c;
+    padding: .5rem .4rem;
+    display: flex;
+    flex-direction: column;
+    /* background-color: pink; */
+}
+
+.form h2 {
+    text-align: center;
+    font-size: .22rem;
+    color: #45f3ff;
+    font-weight: 500;
+    letter-spacing: .02rem;
+}
+
+.form .inputBox {
+    position: relative;
+    width: 3rem;
+    margin-top: .35rem;
+}
+
+.form .inputBox input {
+    position: relative;
+    width: 100%;
+    padding: .2rem .1rem .1rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+    letter-spacing: .01rem;
+    color: #23242a;
+}
+
+.form .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: .2rem .1rem .1rem;
+    color: #8f8f8f;
+    transition: .5s;
+    pointer-events: none;
+    letter-spacing: .01rem;
+}
+
+/* ~是兄弟选择器,这里 input和span是兄弟关系 */
+.form .inputBox input:hover~span,
+.form .inputBox input:valid~span {
+    color: #45f3ff;
+    transform: translateY(-0.3rem) translateX(-0.1rem);
+    font-size: .75em;
+}
+
+.inputBox i {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: .02rem;
+    background-color: #45f3ff;
+    border-radius: .04rem;
+    pointer-events: none;
+    transition: .5s;
+    z-index: -1;
+}
+
+.form .inputBox input:hover~i,
+.form .inputBox input:valid~i {
+    height: .35rem;
+}
+
+.form .links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .1rem;
+}
+
+.form .links a {
+    margin-left: .1rem;
+    color: #8f8f8f;
+    font-size: .14rem;
+}
+
+.form .links a[href] {
+    color: #45f3ff;
+}
+
+.form>a {
+    display: block;
+    width: 50%;
+    font-size: .18rem;
+    padding: .1rem;
+    text-align: center;
+    border-radius: .1rem;
+    margin: .3rem auto;
+    background-color: #45f3ff;
+    color: #000;
+    /* font-weight: 550; */
 }
