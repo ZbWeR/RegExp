@@ -1,0 +1,74 @@
+/* 导入Poppins字体 */
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=Swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100px;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #23242a;
+    min-height: 100vh;
+}
+
+.box {
+    position: relative;
+    width: 3.8rem;
+    height: 4.2rem;
+    background-color: #1c1c1c;
+    border-radius: .08rem;
+    overflow: hidden;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    /* 以下三行语句是为了以盒子的一个角为中心旋转 */
+    /* top和left将盒子的右下角移动到原盒子中心 */
+    /* transform-origin设置右下角为旋转中心 */
+    top: -50%;
+    left: -50%;
+    transform-origin: bottom right;
+    width: 3.8rem;
+    height: 4.2rem;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    /* animation: animate 6s linear infinite; */
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 3.8rem;
+    height: 4.2rem;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    animation: animate 6s linear infinite;
+    transform-origin: bottom right;
+    /* 延时实现对称 */
+    animation-delay: -3s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.form {
+    position: absolute;
+    border-radius: .08rem;
+    inset: .02rem;
+    z-index: 10;
+    background-color: #1c1c1c;
+}
