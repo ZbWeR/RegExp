@@ -23,6 +23,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #23242a;
+    background: url('./bg.jpg') no-repeat;
     min-height: 100vh;
 }
 
@@ -31,6 +32,7 @@ body {
     width: 3.8rem;
     height: 4.2rem;
     background-color: #1c1c1c;
+    opacity: .89;
     border-radius: .08rem;
     overflow: hidden;
 }
@@ -80,10 +82,10 @@ body {
     inset: .02rem;
     z-index: 10;
     background-color: #1c1c1c;
+    /* background-color: rgba(255, 255, 255, 0.3); */
     padding: .5rem .4rem;
     display: flex;
     flex-direction: column;
-    /* background-color: pink; */
 }
 
 .form h2 {
@@ -242,5 +244,7 @@ li {
 }
 
 .form>a:hover {
-    box-shadow: 0px 0px 8px #fff;
+    /* box-shadow: 0px 0px 8px #fff; */
+    transform: scale(1.05);
+    margin: .25rem auto;
 }
